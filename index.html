@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pollen Classifier</title>
+</head>
+<body>
+    <h2>Pollen Grain Image Classification</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Classify</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted Class: {{ prediction }}</h3>
+        <img src="{{ image_path }}" alt="Uploaded Image" width="200px">
+    {% endif %}
+</body>
+</html>
